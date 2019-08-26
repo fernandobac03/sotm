@@ -28,6 +28,9 @@ def traducir(texto):
     request = requests.post(constructed_url, headers=headers, json=body)
     response = request.json()
     jsonresult = json.dumps(response, sort_keys=True, indent=4, separators=(',', ': '))
+    print jsonresult
     return response[0]['translations'][0]['text']
 
 
+
+print (traducir("hola , buen dia"))

@@ -1,0 +1,16 @@
+
+
+Tutorial minería de textos, completo
+https://www.analyticsvidhya.com/blog/2018/02/the-different-methods-deal-text-data-predictive-python/
+
+
+Análisis sentimientos y keywords cloud
+https://www.kaggle.com/ngyptr/python-nltk-sentiment-analysis
+
+
+
+
+
+Graficos PLOT
+https://matplotlib.org/users/pyplot_tutorial.html
+

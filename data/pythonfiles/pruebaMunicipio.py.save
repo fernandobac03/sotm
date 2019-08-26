@@ -10,8 +10,21 @@ from translate import traducir
 from wordcloud import WordCloud,STOPWORDS
 import matplotlib.pyplot as plt
 import unicodedata 
+import json
+import tweepy as tw
 
 
+consumer_key= 'VDaBPHvkNh9JEj3vzDzSiJuRd'
+consumer_secret= 'R22tbJSTwE0eqCP3HNUe8WbIm2E43Xsg2yBmQjTHkO9xPmDPK7'
+access_token= '144021815-NkO6eA02sNKXmlCY7lVwN26FK0DtSVTUJGjLFRsx'
+access_token_secret= 'oMkLLs0wW9QLMXyWMwP0K8Gs7vsfNPBRbBij7G5JEHeJw'
+
+
+def conexion_twitter():
+    auth = tw.OAuthHandler(consumer_key, consumer_secret)
+    auth.set_access_token(access_token, access_token_secret)
+    api = tw.API(auth, wait_on_rate_limit=True)
+    api.update_status("Test from ldapp")
 
 def elimina_tildes(texto):
     string_acentos = texto.decode('utf-8')
@@ -21,6 +34,15 @@ def elimina_tildes(texto):
 
 #basico
 datos = pd.read_csv('datos_es_en.csv')
+with open('json_data.json', 'r') as f:
+    jsonData = json.load(f)
+i = 0
+for element in jsonData:
+    print "elemento: " + str(i)
+    if element['extended_tweet'        print(ele,ent['extended_tweet'])
+    i=i+1
+
+
 datos['word_count'] = datos['sugerencia_en'].apply(lambda x: len(str(x).split(" ")))
 datos[['sugerencia_en', 'word_count']].head()
 
